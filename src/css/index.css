@@ -1,0 +1,121 @@
+:root {
+    --bg-color-1: #081a31;
+    --bg-color-2: #b84040;
+    --bg-color-3: #3a6dc1;
+    --bg-color-4: #0f0b1c;
+    --bg-color-5: #87ceeb;
+    --bg-color-6: #447244;
+    --bg-color-7: #bebe3a;
+    --font-color-base: #ffffff;
+    --font-color-emphasis: #ff94fd;
+}
+
+* {
+    margin: 0;
+    inset: 0;
+    box-sizing: border-box;
+
+    text-align: center;
+
+    color: var(--font-color-base);
+}
+
+html,
+body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 70px 4fr 3fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'header header''hero hero''main aside''banner banner';
+
+}
+header {
+    display: flex;
+    grid-area: header;
+    background-color: var(--bg-color-1);
+
+}
+
+#header {
+    width: 100%;
+}
+
+#menu {
+    width: 180vw;
+    grid-area: menu;
+    background-color: var(--bg-color-2);
+}
+
+.conj-list-link-menu {}
+
+.list-link-menu {}
+
+.list-menu {}
+
+#hero {
+    grid-area: hero;
+    background-color: var(--bg-color-3);
+}
+
+main {
+    grid-area: main;
+    background-color: var(--bg-color-4);
+
+}
+
+aside {
+    display: flex;
+    grid-area: aside;
+    flex-direction: column;
+    border: 1px solid rgb(0, 0, 0);
+    align-items: flex-end;
+
+
+}
+
+aside img {
+    background-color: var(--bg-color-5);
+    width: 598px;
+    height: 50%;
+}
+
+aside article {
+    background-color: var(--bg-color-6);
+    width: 598px;
+    height: 50%;
+}
+
+
+#banner {
+    grid-area: banner;
+    background-color: var(--bg-color-7);
+
+}
+
+.banner-img {}
+
+@media(max-width: 1200px) {
+    body {
+        position: relative;
+        grid-template-rows: 70px 4fr 3fr 1fr 2fr;
+        grid-template-columns: 25vw 1fr;
+        grid-template-areas: 'header header''hero hero''menu main''menu banner''menu aside';
+    }
+
+    #menu {
+        position: absolute;
+        width: auto;
+    }
+    aside img, aside article {width: 100%; height: 100%;}
+
+
+}
+
+@media(max-width: 650px) {
+    body {
+        grid-template-rows: 1fr 1fr 3fr 3fr 2fr 2fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'header''menu''hero''main''banner''aside';
+    }
+}
